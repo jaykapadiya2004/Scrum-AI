@@ -1,0 +1,226 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: #121212;
+  color: #f0f0f0;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 800px;
+  margin: 30px auto;
+  padding: 30px;
+  background-color: #1e1e1e;
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.1);
+}
+
+h1, h2 {
+  color: #00ffe1;
+  margin-bottom: 10px;
+}
+
+form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+input[type="text"], select {
+  flex: 1;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  background-color: #2c2c2c;
+  color: #f0f0f0;
+  outline: none;
+}
+
+button {
+  background-color: #00ffe1;
+  color: #121212;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.2s ease;
+}
+
+button:hover {
+  background-color: #00c7b7;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  background-color: #2c2c2c;
+  border-left: 4px solid #00ffe1;
+  margin-bottom: 10px;
+  padding: 15px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+li strong {
+  color: #ffffff;
+}
+
+li em {
+  font-style: normal;
+  color: #b0b0b0;
+}
+
+pre {
+  background-color: #2a2a2a;
+  padding: 20px;
+  border-radius: 10px;
+  white-space: pre-wrap;
+  font-size: 15px;
+  color: #e0e0e0;
+  line-height: 1.5;
+  border-left: 4px solid #00ffe1;
+}
+
+select {
+  background-color: #2c2c2c;
+  color: #f0f0f0;
+}
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.75);
+}
+
+.modal-content {
+  background-color: #1e1e1e;
+  margin: 10% auto;
+  padding: 20px;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 600px;
+  box-shadow: 0 0 10px #00ffe1;
+  color: #f0f0f0;
+}
+
+.close {
+  color: #888;
+  float: right;
+  font-size: 28px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.close:hover {
+  color: #fff;
+}
+.status-badge {
+  display: inline-block;
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-size: 14px;
+  font-weight: 600;
+  margin-top: 5px;
+}
+
+.status-todo {
+  background-color: #444;
+  color: #ccc;
+}
+
+.status-inprogress {
+  background-color: #ff9800;
+  color: #121212;
+}
+
+.status-done {
+  background-color: #4caf50;
+  color: #fff;
+}
+/* Animate all buttons and task cards on hover */
+button, li {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+button:hover, li:hover {
+  transform: scale(1.03);
+  box-shadow: 0 0 10px rgba(0, 255, 255, 0.3);
+}
+.cursor-glow {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 60px;
+  height: 60px;
+  background: radial-gradient(circle, #00ffe1 15%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+  mix-blend-mode: screen;
+  opacity: 0.12;
+  z-index: 999;
+  will-change: transform;
+}
+#cursor-trail-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: 998;
+}
+
+.trail-dot {
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  background: #00ffe1;
+  border-radius: 50%;
+  opacity: 0.15;
+  transform: translate(-50%, -50%);
+  animation: fadeOut 0.5s forwards;
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 0.2;
+  }
+  100% {
+    opacity: 0;
+    transform: scale(2);
+  }
+}
+.click-pulse {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  background: radial-gradient(circle, #00ffe1 30%, transparent 70%);
+  border-radius: 50%;
+  opacity: 0.4;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  animation: pulseAnim 0.5s ease-out;
+}
+
+@keyframes pulseAnim {
+  0% {
+    transform: translate(-50%, -50%) scale(0.4);
+    opacity: 0.6;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(1.8);
+    opacity: 0;
+  }
+}

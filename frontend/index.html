@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>AI Scrum Master</title>
+  <link rel="stylesheet" href="styles.css"/>
+</head>
+<div class="cursor-glow"></div>
+<div id="cursor-trail-container"></div>
+<body>
+  <div class="container">
+    <h1>🤖 AI Scrum Master Dashboard</h1>
+
+  <form id="taskForm">
+  <input type="text" id="title" placeholder="Task Title" required />
+  <input type="text" id="assignee" placeholder="Assignee" required />
+  
+  <select id="priority" required>
+    <option value="" disabled selected>Select Priority</option>
+    <option value="High">High 🔥</option>
+    <option value="Medium">Medium ⚡</option>
+    <option value="Low">Low 🌱</option>
+  </select>
+
+  <input type="date" id="dueDate" required />
+
+  <button type="submit">Add Task</button>
+  <input type="reset" value="Clear" />
+</form>
+
+    <h2>📋 Task List</h2>
+    <ul id="taskList"></ul>
+
+    <h2>📢 Stand-Up Summary</h2>
+<button id="generateSummary">Generate Summary</button>
+
+<!-- Modal Container -->
+<div id="summaryModal" class="modal">
+  <div class="modal-content">
+    <span id="closeModal" class="close">&times;</span>
+    <h3>🧠 AI Summary</h3>
+    <pre id="summaryText"></pre>
+  </div>
+</div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
