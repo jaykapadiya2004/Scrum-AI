@@ -6,6 +6,10 @@ from backend.ai_summary import generate_summary
 
 app = FastAPI()
 
+@app.get("/")
+def root():
+    return {"message": "AI Scrum Master backend is running!"}
+
 origins = ["*"]
 app.add_middleware(CORSMiddleware, allow_origins=origins, allow_methods=["*"], allow_headers=["*"])
 
