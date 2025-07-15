@@ -3,8 +3,16 @@ from fastapi.middleware.cors import CORSMiddleware
 from backend.models import Task, TaskCreate
 from backend.database import init_db, get_tasks, add_task, update_task
 from backend.ai_summary import generate_summary
+from fastapi.middleware.cors import CORSMiddleware
 
 app = FastAPI()
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],  # You can restrict to Netlify domain later
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 @app.get("/")
 def root():
